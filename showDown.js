@@ -56,22 +56,26 @@ function fight() {
     else if (heroHealth <= 0 && heroHealth < villainHealth) {
       alert(`${monster} defeated ${hero}, ${monster} is the winner :(`);
     }
-    //Bonus condition
+    //Bonus 1
     else if (heroHealth && villainHealth == 0) {
       alert(`${monster} and ${monster} have defeated each other! There is no winner.`);
 
     }
   }
 
+  //Bonus 2
   let userInput = prompt("Would you like to play again?");
   if (userInput == "yes" || userInput == "Yes") {
+    //recursively calls the function to rerun it
     return fight();
   }
   else if (userInput == "no" || userInput == "No") {
+    //Tells the player thank you
     alert("Thank you for playing!");
     return;
   }
-  else{
+  else {
+    //Keeps asking if conditions aren't met
     userInput = prompt("Would you like to play again?");
   }
 }
